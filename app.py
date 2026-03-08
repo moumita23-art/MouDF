@@ -230,7 +230,7 @@ def process(tool_id):
         elif tool_id == 'protect':
             password = request.form.get('password')
             output_filename = f"{base_name}_protected.pdf"
-            output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
+            (debug=True, host='0.0.0.0', port=5000)
             reader = PyPDF2.PdfReader(saved_files[0])
             writer = PyPDF2.PdfWriter()
             for page in reader.pages:
@@ -259,7 +259,7 @@ def process(tool_id):
             from reportlab.pdfgen import canvas
             from reportlab.lib.pagesizes import letter
             
-            (debug=True, host='0.0.0.0', port=5000)
+            app.run(debug=True, host='0.0.0.0', port=5000)
             output_filename = f"{base_name}_watermarked.pdf"
             output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
             
@@ -309,4 +309,5 @@ def process(tool_id):
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
 
