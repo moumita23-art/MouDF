@@ -230,7 +230,7 @@ def process(tool_id):
         elif tool_id == 'protect':
             password = request.form.get('password')
             output_filename = f"{base_name}_protected.pdf"
-            (debug=True, host='0.0.0.0', port=5000)
+            
             reader = PyPDF2.PdfReader(saved_files[0])
             writer = PyPDF2.PdfWriter()
             for page in reader.pages:
@@ -309,5 +309,6 @@ def process(tool_id):
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
 
 
