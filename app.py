@@ -259,7 +259,7 @@ def process(tool_id):
             from reportlab.pdfgen import canvas
             from reportlab.lib.pagesizes import letter
             
-            text = request.form.get('watermark_text', 'MouDF Watermark')
+            (debug=True, host='0.0.0.0', port=5000)
             output_filename = f"{base_name}_watermarked.pdf"
             output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
             
@@ -309,3 +309,4 @@ def process(tool_id):
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
